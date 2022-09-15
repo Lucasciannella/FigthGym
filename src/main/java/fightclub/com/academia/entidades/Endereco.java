@@ -1,10 +1,8 @@
 package fightclub.com.academia.entidades;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
+@Entity
 public class Endereco {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -12,7 +10,7 @@ public class Endereco {
     @Column(nullable = false, length = 100)
     private String bairro;
     @Column(nullable = false, length = 100)
-    private String Logradouro;
+    private String nomeDaRua;
     @Column(length = 100)
     private Integer numero;
 }

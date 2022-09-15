@@ -1,32 +1,28 @@
 package fightclub.com.academia.entidades;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
+@SequenceGenerator(name = "aluno_seq", sequenceName = "aluno_seq", initialValue = 1, allocationSize = 1)
+@Getter
+@Setter
 public class Aluno {
-
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "aluno_seq")
     private Long id;
-
-    @Column(nullable = false, length = 100)
-    private String primeiroNome;
-
-    @Column(nullable = false, length = 100)
-    private String segundoNome;
-
-    @Column(nullable = false, length = 11, unique = true)
+    private String nome;
+    private String sobrenome;
+    @Column(unique = true)
     private String cpf;
-
-    @Column(nullable = false)
+    @Column(name = "ano_de_nascimento")
     private String anoDeNascimento;
-
-    @Column(nullable = false)
     private String telefone;
-
-//    @OneToOne
-//    private Endereco endereco;
-//
-//    @OneToMany
-//    private Mensalidade mensalidade;
+    @OneToOne(cascade = CascadeType.ALL)
+    private Endereco endereco;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "aluno")
+    private List<Mensalidade> mensalidade;
 }
