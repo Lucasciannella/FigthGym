@@ -18,17 +18,17 @@ public class CustomerController {
     private final CustomerService customerService;
 
     @GetMapping()
-    public ResponseEntity<Page<Customer>> getAll(Pageable pageable) {
+    public ResponseEntity<Page<Customer>> getAllPageable(Pageable pageable) {
         return ResponseEntity.ok(customerService.findAllPageable(pageable));
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<Customer> getById(@PathVariable Long id) {
-        return ResponseEntity.ok(customerService.buscarPorIdOuRetornarExcecao(id));
+        return ResponseEntity.ok(customerService.findByIdOrThrowBadRequestException(id));
     }
 
     @PostMapping()
     public ResponseEntity<Customer> save(@RequestBody CustomerPostRequestBody customerPostRequestBody) {
-        return new ResponseEntity<>(customerService.cadastrar(customerPostRequestBody), HttpStatus.CREATED);
+        return new ResponseEntity<>(customerService.store(customerPostRequestBody), HttpStatus.CREATED);
     }
 }

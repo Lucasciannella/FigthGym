@@ -37,7 +37,7 @@ public class Customer {
     @Column(nullable = false)
     private String cellphone;
 
-    @Column(nullable = false)
+
     @OneToOne(cascade = CascadeType.ALL)
     private Address address;
 
