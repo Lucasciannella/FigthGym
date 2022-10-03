@@ -10,6 +10,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/v1/api/aluno")
@@ -28,7 +30,7 @@ public class CustomerController {
     }
 
     @PostMapping()
-    public ResponseEntity<Customer> save(@RequestBody CustomerPostRequestBody customerPostRequestBody) {
+    public ResponseEntity<Customer> save(@Valid @RequestBody CustomerPostRequestBody customerPostRequestBody) {
         return new ResponseEntity<>(customerService.store(customerPostRequestBody), HttpStatus.CREATED);
     }
 }

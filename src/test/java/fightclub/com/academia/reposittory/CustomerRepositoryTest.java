@@ -8,8 +8,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
-import java.time.LocalDate;
-
 @DataJpaTest
 @DisplayName("Test for Customer repository")
 class CustomerRepositoryTest {
@@ -29,7 +27,7 @@ class CustomerRepositoryTest {
         Assertions.assertThat(customerSaved.getLastName()).isEqualTo(customerToBeSaved.getLastName());
         Assertions.assertThat(customerSaved.getCpf()).isEqualTo(customerToBeSaved.getCpf());
         Assertions.assertThat(customerSaved.getCellphone()).isEqualTo(customerToBeSaved.getCellphone());
-        Assertions.assertThat(customerSaved.getBirthDate()).isEqualTo(customerToBeSaved.getBirthDate());
+        Assertions.assertThat(customerSaved.getAge()).isEqualTo(customerToBeSaved.getAge());
     }
 
     private Customer createCustomer() {
@@ -39,7 +37,7 @@ class CustomerRepositoryTest {
                 .firstName("lucas")
                 .lastName("ciannella")
                 .cpf("21123145425")
-                .birthDate(LocalDate.now())
+                .age(22L)
                 .cellphone("5521978474950")
                 .build();
     }

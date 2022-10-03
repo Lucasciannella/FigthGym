@@ -6,9 +6,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
-import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -32,15 +29,13 @@ public class Customer {
     private String cpf;
 
     @Column(nullable = false)
-    private LocalDate birthDate;
+    private Long age;
 
     @Column(nullable = false)
     private String cellphone;
 
-
     @OneToOne(cascade = CascadeType.ALL)
     private Address address;
-
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "customer")
     private List<Payment> payment;

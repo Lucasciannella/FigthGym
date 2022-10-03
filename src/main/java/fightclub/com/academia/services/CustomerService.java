@@ -9,8 +9,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
-
 @Service
 @RequiredArgsConstructor
 public class CustomerService {
@@ -30,7 +28,7 @@ public class CustomerService {
                 .firstName(customerPostRequestBody.getFirstName())
                 .lastName(customerPostRequestBody.getLastName())
                 .cpf(customerPostRequestBody.getCpf())
-                .birthDate(LocalDate.now())
+                .age(customerPostRequestBody.getAge())
                 .cellphone(customerPostRequestBody.getCellphone())
                 .address(customerPostRequestBody.getAddress())
                 .build();

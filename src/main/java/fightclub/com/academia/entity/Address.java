@@ -12,18 +12,14 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@SequenceGenerator(name = "adress_seq", sequenceName = "adress_seq", initialValue = 1, allocationSize = 1)
 public class Address {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "adress_seq")
     private Long id;
-
     private String uf;
-
     private String cidade;
-
     private String bairro;
-
     private String endereco;
-
     private String complemento;
 }
