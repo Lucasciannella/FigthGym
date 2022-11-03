@@ -29,7 +29,7 @@ public class Customer {
     private String cpf;
 
     @Column(nullable = false)
-    private Long age;
+    private Integer age;
 
     @Column(nullable = false)
     private String cellphone;
@@ -37,6 +37,4 @@ public class Customer {
     @OneToOne(cascade = CascadeType.ALL)
     private Address address;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "customer")
-    private List<Payment> payment;
 }

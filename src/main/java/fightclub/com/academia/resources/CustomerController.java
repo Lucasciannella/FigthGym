@@ -33,4 +33,5 @@ public class CustomerController {
     public ResponseEntity<Customer> save(@Valid @RequestBody CustomerPostRequestBody customerPostRequestBody) {
         return new ResponseEntity<>(customerService.store(customerPostRequestBody), HttpStatus.CREATED);
     }
+
 }

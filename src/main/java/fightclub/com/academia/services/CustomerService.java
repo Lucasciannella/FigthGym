@@ -24,6 +24,7 @@ public class CustomerService {
     }
 
     public Customer store(CustomerPostRequestBody customerPostRequestBody) {
+
         Customer customer = Customer.builder()
                 .firstName(customerPostRequestBody.getFirstName())
                 .lastName(customerPostRequestBody.getLastName())
@@ -38,4 +39,5 @@ public class CustomerService {
     public void delete(Long id) {
         customerRepository.delete(findByIdOrThrowBadRequestException(id));
     }
+
 }
