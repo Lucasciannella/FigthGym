@@ -39,5 +39,4 @@ public class CustomerService {
     public void delete(Long id) {
         customerRepository.delete(findByIdOrThrowBadRequestException(id));
     }
-
 }
