@@ -6,7 +6,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @SequenceGenerator(name = "customer_seq", sequenceName = "customer_seq", initialValue = 1, allocationSize = 1)
@@ -36,5 +35,4 @@ public class Customer {
 
     @OneToOne(cascade = CascadeType.ALL)
     private Address address;
-
 }

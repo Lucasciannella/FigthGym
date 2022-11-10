@@ -3,7 +3,11 @@ package fightclub.com.academia.resources;
 import fightclub.com.academia.dto.CustomerPostRequestBody;
 import fightclub.com.academia.entity.Customer;
 import fightclub.com.academia.services.CustomerService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.RequiredArgsConstructor;
+import org.springdoc.api.annotations.ParameterObject;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
@@ -20,7 +24,8 @@ public class CustomerController {
     private final CustomerService customerService;
 
     @GetMapping()
-    public ResponseEntity<Page<Customer>> getAllPageable(Pageable pageable) {
+    @Operation(summary = "List all customer paginated", description = "The default size is 20, use the parameter size to change the default size", tags = {"Customer"})
+    public ResponseEntity<Page<Customer>> getAllPageable(@ParameterObject Pageable pageable) {
         return ResponseEntity.ok(customerService.findAllPageable(pageable));
     }
 
@@ -32,6 +37,16 @@ public class CustomerController {
     @PostMapping()
     public ResponseEntity<Customer> save(@Valid @RequestBody CustomerPostRequestBody customerPostRequestBody) {
         return new ResponseEntity<>(customerService.store(customerPostRequestBody), HttpStatus.CREATED);
+    }
+
+    @DeleteMapping("/{id}")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "204", description = "Successful operation"),
+            @ApiResponse(responseCode = "400", description = "When customer Does Not exist in database")
+    })
+    public ResponseEntity<Void> delete(@PathVariable Long id) {
+        customerService.delete(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
 }

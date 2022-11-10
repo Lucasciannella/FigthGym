@@ -2,7 +2,6 @@ package fightclub.com.academia.reposittory;
 
 import fightclub.com.academia.builders.CustomerBuilder;
 import fightclub.com.academia.entity.Customer;
-import lombok.var;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -48,6 +47,5 @@ class CustomerRepositoryTest {
         Optional<Customer> customerOptional = this.customerRepository.findById(customerToBeSaved.getId());
 
         Assertions.assertThat(customerOptional).isEmpty();
-
     }
 }

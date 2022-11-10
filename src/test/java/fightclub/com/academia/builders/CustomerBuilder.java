@@ -1,6 +1,5 @@
 package fightclub.com.academia.builders;
 
-import fightclub.com.academia.entity.Address;
 import fightclub.com.academia.entity.Customer;
 
 public class CustomerBuilder {
@@ -15,6 +14,7 @@ public class CustomerBuilder {
                 .address(AddressBuilder.createAddressToBeSaved())
                 .build();
     }
+
     public static Customer createValidCustomer() {
         return Customer.builder()
                 .id(1L)
@@ -26,5 +26,4 @@ public class CustomerBuilder {
                 .address(AddressBuilder.createAddressToBeSaved())
                 .build();
     }
-
 }

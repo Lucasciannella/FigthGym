@@ -4,7 +4,7 @@ import fightclub.com.academia.entity.Address;
 
 public class AddressBuilder {
 
-    public static Address createAddressToBeSaved(){
+    public static Address createAddressToBeSaved() {
         return Address.builder()
                 .uf("RJ")
                 .bairro("Ricardo de albuquerque")

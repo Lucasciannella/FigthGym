@@ -17,3 +17,6 @@ logging:
     org:
       hibernate:
         SQL: DEBUG
+
+springdoc:
+  packages-to-Scan: fightclub.com.academia

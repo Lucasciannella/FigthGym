@@ -36,6 +36,10 @@ public class CustomerService {
         return customerRepository.save(customer);
     }
 
+    public Customer FindByCpf(String cpf){
+        return customerRepository.findByCpf(cpf);
+    }
+
     public void delete(Long id) {
         customerRepository.delete(findByIdOrThrowBadRequestException(id));
     }

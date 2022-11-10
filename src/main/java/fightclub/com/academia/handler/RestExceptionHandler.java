@@ -68,5 +68,4 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
 
         return new ResponseEntity<>(exceptionDetails, headers, status);
     }
-
 }
