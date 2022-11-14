@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
 
@@ -21,18 +22,23 @@ public class Address {
     @Schema(hidden = true)
     private Long id;
 
-    @Schema(description = "This is the customer federative unit", example = "RJ", required = true)
+    @Schema(description = "This is the customer federative unit.", example = "RJ", required = true)
+    @Column(nullable = false)
     private String uf;
 
-    @Schema(description = "This is the customer city", example = "Rio De Janeiro", required = true)
+    @Schema(description = "This is the customer city.", example = "Rio De Janeiro", required = true)
+    @Column(nullable = false)
     private String cidade;
 
-    @Schema(description = "This is the customer district", example = "Barra da Tijuca", required = true)
+    @Schema(description = "This is the customer district.", example = "Barra da Tijuca", required = true)
+    @Column(nullable = false)
     private String bairro;
 
-    @Schema(description = "This is the customer road", example = "Avenida das américas", required = true)
+    @Schema(description = "This is the customer road.", example = "Avenida das américas", required = true)
+    @Column(nullable = false)
     private String endereco;
 
-    @Schema(description = "This is the customer complement", example = "Fundos", required = true)
+    @Schema(description = "This is the customer complement.", example = "Fundos", required = true)
+    @Column(nullable = false)
     private String complemento;
 }

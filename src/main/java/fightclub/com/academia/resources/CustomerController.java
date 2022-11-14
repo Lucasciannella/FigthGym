@@ -34,6 +34,11 @@ public class CustomerController {
         return ResponseEntity.ok(customerService.findByIdOrThrowBadRequestException(id));
     }
 
+    @GetMapping("/cpf/{cpf}")
+    public ResponseEntity<Customer> getByCpf(@PathVariable String cpf){
+        return ResponseEntity.ok(customerService.FindByCpf(cpf));
+    }
+
     @PostMapping()
     public ResponseEntity<Customer> save(@Valid @RequestBody CustomerPostRequestBody customerPostRequestBody) {
         return new ResponseEntity<>(customerService.store(customerPostRequestBody), HttpStatus.CREATED);

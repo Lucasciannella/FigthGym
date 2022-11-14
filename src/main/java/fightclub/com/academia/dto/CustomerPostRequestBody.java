@@ -16,29 +16,30 @@ import javax.validation.constraints.Pattern;
 @Builder
 public class CustomerPostRequestBody {
 
-    @NotNull
-    @Schema(description = "This is the customer name", example = "José", required = true)
+    @NotNull(message = "Nome inválido, por favor insira um nome válido.")
+    @Schema(description = "This is the customer name.", example = "José", required = true)
     private String firstName;
 
-    @NotNull
-    @Schema(description = "this is the customer last name", example = "dos Santos", required = true)
+    @NotNull(message = "Sobrenome inválido, por favor insira um sobrenome válido.")
+    @Schema(description = "This is the customer last name.", example = "dos Santos", required = true)
     private String lastName;
 
-    @NotNull
-    @CPF(message = "Por favor insira um cpf válido")
+    @NotNull(message = "Cpf inválido.")
+    @CPF(message = "Cpf inválido, por favor Insira um cpf válido.")
     @Pattern(regexp = RegexUtils.CPF_REGEX)
     @Schema(description = "This is the customer individual registration", example = "43571497031", required = true)
     private String cpf;
 
-    @NotNull
+    @NotNull(message = "Idade inválida, por favor insira uma idade válida.")
     @Schema(description = "This is the customer age", example = "22", required = true)
     private Integer age;
 
-    @NotNull
-    @Schema(description = "This is the customer cellphone", example = "5521965904839", required = true)
+    @NotNull(message = "Telefone inválido, por favor insira uma idade válida")
+    @Schema(description = "This is the customer cellphone.", example = "5521965904839", required = true)
+    @Pattern(regexp = RegexUtils.CELLPHONE_REGEX_BRL)
     private String cellphone;
 
-    @NotNull
-    @Schema(description = "This is the customer Address", required = true)
+    @NotNull(message = "Endereço inválido, por favor preencha corretamente.")
+    @Schema(description = "This is the customer Address.", required = true)
     private Address address;
 }
