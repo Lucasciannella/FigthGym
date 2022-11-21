@@ -5,7 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
 
@@ -15,6 +14,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Builder
 @SequenceGenerator(name = "adress_seq", sequenceName = "adress_seq", initialValue = 1, allocationSize = 1)
+@Table(name = "ADDRESS_TB")
 public class Address {
 
     @Id

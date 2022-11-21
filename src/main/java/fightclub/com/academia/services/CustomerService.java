@@ -2,6 +2,7 @@ package fightclub.com.academia.services;
 
 import fightclub.com.academia.dto.CustomerPostRequestBody;
 import fightclub.com.academia.entity.Customer;
+import fightclub.com.academia.entity.Payment;
 import fightclub.com.academia.exceptions.BadRequestException;
 import fightclub.com.academia.reposittory.CustomerRepository;
 import lombok.RequiredArgsConstructor;
@@ -9,10 +10,14 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+
 @Service
 @RequiredArgsConstructor
 public class CustomerService {
     private final CustomerRepository customerRepository;
+
+    private final PaymentService paymentService;
 
     public Page<Customer> findAllPageable(Pageable pageable) {
         return customerRepository.findAll(pageable);
@@ -32,6 +37,7 @@ public class CustomerService {
                 .age(customerPostRequestBody.getAge())
                 .cellphone(customerPostRequestBody.getCellphone())
                 .address(customerPostRequestBody.getAddress())
+                .payments(paymentService.generatePaymentForCadastredCustomer())
                 .build();
         return customerRepository.save(customer);
     }
