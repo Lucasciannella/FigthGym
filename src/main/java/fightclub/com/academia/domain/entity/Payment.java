@@ -1,6 +1,8 @@
-package fightclub.com.academia.entity;
+package fightclub.com.academia.domain.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import fightclub.com.academia.domain.enums.AccountStatus;
+import fightclub.com.academia.domain.enums.AccountType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;

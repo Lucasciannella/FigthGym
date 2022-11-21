@@ -1,4 +1,4 @@
-package fightclub.com.academia.entity;
+package fightclub.com.academia.domain.entity;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;

@@ -1,8 +1,8 @@
 package fightclub.com.academia.resources;
 
 import fightclub.com.academia.dto.CustomerPostRequestBody;
-import fightclub.com.academia.entity.Customer;
-import fightclub.com.academia.services.CustomerService;
+import fightclub.com.academia.domain.entity.Customer;
+import fightclub.com.academia.domain.services.CustomerService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;

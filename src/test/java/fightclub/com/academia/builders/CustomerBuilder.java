@@ -1,6 +1,6 @@
 package fightclub.com.academia.builders;
 
-import fightclub.com.academia.entity.Customer;
+import fightclub.com.academia.domain.entity.Customer;
 
 public class CustomerBuilder {
 

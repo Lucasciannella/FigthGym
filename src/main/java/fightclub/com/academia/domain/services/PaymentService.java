@@ -1,9 +1,8 @@
-package fightclub.com.academia.services;
+package fightclub.com.academia.domain.services;
 
-import fightclub.com.academia.entity.AccountStatus;
-import fightclub.com.academia.entity.AccountType;
-import fightclub.com.academia.entity.Payment;
-import org.springframework.beans.factory.annotation.Autowired;
+import fightclub.com.academia.domain.enums.AccountStatus;
+import fightclub.com.academia.domain.enums.AccountType;
+import fightclub.com.academia.domain.entity.Payment;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;

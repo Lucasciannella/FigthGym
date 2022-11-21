@@ -1,4 +1,4 @@
-package fightclub.com.academia.entity;
+package fightclub.com.academia.domain.enums;
 
 import lombok.Getter;
 

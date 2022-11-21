@@ -1,6 +1,6 @@
 package fightclub.com.academia.dto;
 
-import fightclub.com.academia.entity.Address;
+import fightclub.com.academia.domain.entity.Address;
 import fightclub.com.academia.utils.RegexUtils;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;

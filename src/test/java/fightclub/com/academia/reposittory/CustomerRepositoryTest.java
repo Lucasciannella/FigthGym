@@ -1,7 +1,8 @@
 package fightclub.com.academia.reposittory;
 
 import fightclub.com.academia.builders.CustomerBuilder;
-import fightclub.com.academia.entity.Customer;
+import fightclub.com.academia.domain.reposittory.CustomerRepository;
+import fightclub.com.academia.domain.entity.Customer;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

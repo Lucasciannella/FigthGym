@@ -1,6 +1,6 @@
 package fightclub.com.academia.builders;
 
-import fightclub.com.academia.entity.Address;
+import fightclub.com.academia.domain.entity.Address;
 
 public class AddressBuilder {
 

@@ -1,16 +1,13 @@
-package fightclub.com.academia.services;
+package fightclub.com.academia.domain.services;
 
 import fightclub.com.academia.dto.CustomerPostRequestBody;
-import fightclub.com.academia.entity.Customer;
-import fightclub.com.academia.entity.Payment;
+import fightclub.com.academia.domain.entity.Customer;
 import fightclub.com.academia.exceptions.BadRequestException;
-import fightclub.com.academia.reposittory.CustomerRepository;
+import fightclub.com.academia.domain.reposittory.CustomerRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
 
 @Service
 @RequiredArgsConstructor
